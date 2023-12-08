@@ -25,16 +25,10 @@ public class CardPanel extends JPanel {
     private void handleCardClick(int mouseX, int mouseY) throws InterruptedException {
         for (Card card : cards) {
             if (card.isClicked(mouseX, mouseY)) {
+                card.flip();
                 System.out.println("Card Clicked!");
-                card.setColor(getRandomColor());
             }
         }
-    }
-    private Color getRandomColor() {
-        int red = (int) (Math.random() * 256);
-        int green = (int) (Math.random() * 256);
-        int blue = (int) (Math.random() * 256);
-        return new Color(red, green, blue);
     }
 
     @Override

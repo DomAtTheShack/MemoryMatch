@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class CardGameGUI {
@@ -37,7 +36,7 @@ public class CardGameGUI {
         BufferedImage[] Images = new BufferedImage[56];
         for(int  i = 0; i < Images.length; i++)
         {
-            Images[i] = loadImage("image" + 0 + ".png");
+            Images[i] = loadImage("image" + i + ".png");
         }
 
         for (int i = 0; i < 56; i++)

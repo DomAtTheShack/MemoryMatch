@@ -2,12 +2,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Card {
-    private int x, y;
+    private final int x;
+    private final int y;
     private static final int CARD_WIDTH = 80;
     private static final int CARD_HEIGHT = 120;
-    private Rectangle boundingBox;
+    private final Rectangle boundingBox;
     private Color color;
-    private MemoryCard MemoryCard;
+    private boolean isFlipped;
+    private final MemoryCard MemoryCard;
 
     public Card(int x, int y, Color color, MemoryCard MemoryCard) {
         this.x = x;
@@ -15,6 +17,7 @@ public class Card {
         this.color = color;
         this.boundingBox = new Rectangle(x, y, CARD_WIDTH, CARD_HEIGHT);
         this.MemoryCard = MemoryCard;
+        isFlipped = false;
     }
 
     public void draw(Graphics g) {
@@ -22,7 +25,7 @@ public class Card {
         g.fillRect(x, y, CARD_WIDTH, CARD_HEIGHT);
         g.setColor(Color.BLACK);
         g.drawRect(x, y, CARD_WIDTH, CARD_HEIGHT);
-        if (MemoryCard.getImage() != null) {
+        if (MemoryCard.getImage() != null && isFlipped) {
             g.drawImage(MemoryCard.getImage(), x, y, CARD_WIDTH, CARD_HEIGHT, null);
         }
     }
@@ -37,5 +40,9 @@ public class Card {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+    public void flip()
+    {
+        isFlipped = !isFlipped;
     }
 }
