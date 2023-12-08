@@ -5,7 +5,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class CardPanel extends JPanel {
-    private List<Card> cards;
+    private final List<Card> cards;
 
     public CardPanel(List<Card> cards) {
         this.cards = cards;
@@ -26,6 +26,23 @@ public class CardPanel extends JPanel {
         for (Card card : cards) {
             if (card.isClicked(mouseX, mouseY)) {
                 card.flip();
+                switch (CardGameGUI.flipped){
+                    case 0:
+                        CardGameGUI.flipped ++;
+                        CardGameGUI.tempCard = card;
+                        break;
+                    case 1:
+                        if(CardGameGUI.checkCards(card.getImage(), CardGameGUI.tempCard.getImage()))
+                        {
+                            card.flip();
+                            card.setColor(Color.BLACK);
+                            card.done();
+                            CardGameGUI.tempCard.flip();
+                            CardGameGUI.tempCard.setColor(Color.BLACK);
+                            CardGameGUI.tempCard.done();
+                            CardGameGUI.flipped = 0;
+                        }
+                }
                 System.out.println("Card Clicked!");
             }
         }

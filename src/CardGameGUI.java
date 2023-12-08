@@ -9,6 +9,8 @@ import java.util.Random;
 
 public class CardGameGUI {
     public static List<Card> cards = new ArrayList<>();
+    public static byte flipped = 0;
+    public static Card tempCard;
     public static void main(String[] args) {
         SwingUtilities.invokeLater(CardGameGUI::createAndShowGUI);
     }
@@ -73,6 +75,21 @@ public class CardGameGUI {
             if(y==x)
                 return false;
         }
+        return true;
+    }
+    public static boolean checkCards(BufferedImage img1, BufferedImage img2) {
+        if (img1.getWidth() != img2.getWidth() || img1.getHeight() != img2.getHeight()) {
+            return false;
+        }
+
+        for (int y = 0; y < img1.getHeight(); y++) {
+            for (int x = 0; x < img1.getWidth(); x++) {
+                if (img1.getRGB(x, y) != img2.getRGB(x, y)) {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
 }

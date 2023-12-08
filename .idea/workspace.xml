@@ -4,68 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a240ed5-c283-4079-8b2f-22dc3bb33416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CardImages/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image53.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image54.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image55.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CardImages/image9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5a240ed5-c283-4079-8b2f-22dc3bb33416" name="Changes" comment="Images added and flipping logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CardImages/image0.png" beforeDir="false" afterPath="$PROJECT_DIR$/CardImages/image0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardGameGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemoryCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoryCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +63,25 @@
       <option name="presentableId" value="Default" />
       <updated>1701968534814</updated>
       <workItem from="1701968535822" duration="5999000" />
-      <workItem from="1702053887025" duration="1940000" />
+      <workItem from="1702053887025" duration="2204000" />
+      <workItem from="1702060323688" duration="817000" />
     </task>
+    <task id="LOCAL-00001" summary="Images added and flipping logic">
+      <option name="closed" value="true" />
+      <created>1702058667948</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702058667948</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Images added and flipping logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images added and flipping logic" />
   </component>
 </project>

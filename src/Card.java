@@ -9,6 +9,7 @@ public class Card {
     private final Rectangle boundingBox;
     private Color color;
     private boolean isFlipped;
+    private boolean done;
     private final MemoryCard MemoryCard;
 
     public Card(int x, int y, Color color, MemoryCard MemoryCard) {
@@ -18,6 +19,7 @@ public class Card {
         this.boundingBox = new Rectangle(x, y, CARD_WIDTH, CARD_HEIGHT);
         this.MemoryCard = MemoryCard;
         isFlipped = false;
+        done = false;
     }
 
     public void draw(Graphics g) {
@@ -34,8 +36,8 @@ public class Card {
         return boundingBox.contains(mouseX, mouseY);
     }
 
-    public Color getColor() {
-        return color;
+    public BufferedImage getImage() {
+        return MemoryCard.getImage();
     }
 
     public void setColor(Color color) {
@@ -44,5 +46,9 @@ public class Card {
     public void flip()
     {
         isFlipped = !isFlipped;
+    }
+
+    public void done() {
+        done = true;
     }
 }
