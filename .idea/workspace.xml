@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardGameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardGameGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemoryCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoryCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -54,6 +56,13 @@
       <recent name="C:\Users\ctehannd67\IdeaProjects\MemoryMatch\CardImages" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,6 +74,8 @@
       <workItem from="1701968535822" duration="5999000" />
       <workItem from="1702053887025" duration="2204000" />
       <workItem from="1702060323688" duration="817000" />
+      <workItem from="1702167183140" duration="320000" />
+      <workItem from="1702238230739" duration="5073000" />
     </task>
     <task id="LOCAL-00001" summary="Images added and flipping logic">
       <option name="closed" value="true" />

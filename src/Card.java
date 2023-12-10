@@ -10,14 +10,14 @@ public class Card {
     private Color color;
     private boolean isFlipped;
     private boolean done;
-    private final MemoryCard MemoryCard;
+    private final BufferedImage Image;
 
-    public Card(int x, int y, Color color, MemoryCard MemoryCard) {
+    public Card(int x, int y, Color color, BufferedImage Image) {
         this.x = x;
         this.y = y;
         this.color = color;
         this.boundingBox = new Rectangle(x, y, CARD_WIDTH, CARD_HEIGHT);
-        this.MemoryCard = MemoryCard;
+        this.Image = Image;
         isFlipped = false;
         done = false;
     }
@@ -27,8 +27,8 @@ public class Card {
         g.fillRect(x, y, CARD_WIDTH, CARD_HEIGHT);
         g.setColor(Color.BLACK);
         g.drawRect(x, y, CARD_WIDTH, CARD_HEIGHT);
-        if (MemoryCard.getImage() != null && isFlipped) {
-            g.drawImage(MemoryCard.getImage(), x, y, CARD_WIDTH, CARD_HEIGHT, null);
+        if (Image != null && isFlipped) {
+            g.drawImage(Image, x, y, CARD_WIDTH, CARD_HEIGHT, null);
         }
     }
 
@@ -37,7 +37,7 @@ public class Card {
     }
 
     public BufferedImage getImage() {
-        return MemoryCard.getImage();
+        return Image;
     }
 
     public void setColor(Color color) {
@@ -50,5 +50,13 @@ public class Card {
 
     public void done() {
         done = true;
+    }
+    public boolean isFlipped()
+    {
+        return isFlipped;
+    }
+    public boolean isDone()
+    {
+        return done;
     }
 }

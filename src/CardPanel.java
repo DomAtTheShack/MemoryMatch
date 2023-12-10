@@ -1,14 +1,21 @@
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class CardPanel extends JPanel {
     private final List<Card> cards;
+    private final Timer flipTimer;
 
     public CardPanel(List<Card> cards) {
         this.cards = cards;
+
+        flipTimer = new Timer(3000, e -> {
+            flipBack();
+            repaint();
+            CardGameGUI.flipped = 0;
+        });
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -19,34 +26,51 @@ public class CardPanel extends JPanel {
                     throw new RuntimeException(ex);
                 }
                 repaint();
+                CardGameGUI.checkWin(cards);
             }
         });
     }
+
     private void handleCardClick(int mouseX, int mouseY) throws InterruptedException {
+        System.out.println(CardGameGUI.flipped);
+        if(CardGameGUI.flipped == 2)
+            return;
         for (Card card : cards) {
-            if (card.isClicked(mouseX, mouseY)) {
+            if (card.isClicked(mouseX, mouseY) && !card.isFlipped()) {
                 card.flip();
-                switch (CardGameGUI.flipped){
+                switch (CardGameGUI.flipped) {
                     case 0:
-                        CardGameGUI.flipped ++;
+                        CardGameGUI.flipped++;
                         CardGameGUI.tempCard = card;
                         break;
                     case 1:
-                        if(CardGameGUI.checkCards(card.getImage(), CardGameGUI.tempCard.getImage()))
-                        {
-                            card.flip();
+                        CardGameGUI.flipped++; // Increment flipped count before timer logic
+
+                        if (CardGameGUI.checkCards(card.getImage(), CardGameGUI.tempCard.getImage())) {
                             card.setColor(Color.BLACK);
                             card.done();
-                            CardGameGUI.tempCard.flip();
                             CardGameGUI.tempCard.setColor(Color.BLACK);
                             CardGameGUI.tempCard.done();
-                            CardGameGUI.flipped = 0;
+                            flipTimer.start();
+                        } else {
+                            CardGameGUI.badFlips ++;
+                            CardGameGUI.toFlip = true;
+                            flipTimer.start();
                         }
+                        break;
                 }
-                System.out.println("Card Clicked!");
             }
         }
     }
+
+    private void flipBack() {
+        for (Card card : cards) {
+            if (card.isFlipped() && !card.isDone()) {
+                card.flip();
+            }
+        }
+    }
+
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -55,5 +79,4 @@ public class CardPanel extends JPanel {
             card.draw(g);
         }
     }
-
 }

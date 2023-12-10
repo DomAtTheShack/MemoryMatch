@@ -3,20 +3,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class CardGameGUI {
     public static List<Card> cards = new ArrayList<>();
     public static byte flipped = 0;
     public static Card tempCard;
+    public static boolean toFlip;
     public static void main(String[] args) {
         SwingUtilities.invokeLater(CardGameGUI::createAndShowGUI);
     }
+    private static final JFrame frame = new JFrame("Card Game");
+    public static short badFlips;
+    private static Timer timer;
+
+    private static long startTime;
+
 
     private static void createAndShowGUI() {
-        JFrame frame = new JFrame("Card Game");
         frame.setSize(800, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -27,6 +35,7 @@ public class CardGameGUI {
         frame.add(cardPanel);
 
         frame.setVisible(true);
+        startTimer();
     }
 
     private static void generateCards() {
@@ -49,8 +58,7 @@ public class CardGameGUI {
                 Random = random.nextInt(56);
             }
             used.add(Random);
-            MemoryCard TempCard = new MemoryCard(Images[Random], Random);
-            cards.add(new Card(cardX, cardY, Color.WHITE, TempCard));
+            cards.add(new Card(cardX, cardY, Color.WHITE, Images[Random]));
 
             cardX += 90; // Space between cards
             if (cardX + 80 > 800) {
@@ -62,7 +70,7 @@ public class CardGameGUI {
 
     private static BufferedImage loadImage(String path) {
         try {
-            return ImageIO.read(CardGameGUI.class.getResource(path));
+            return ImageIO.read(Objects.requireNonNull(CardGameGUI.class.getResource(path)));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -92,4 +100,46 @@ public class CardGameGUI {
 
         return true;
     }
+
+    public static void checkWin(List<Card> cards) {
+        for (Card card : cards) {
+            if (!card.isDone()) {
+                return;
+            }
+        }
+
+        stopTimer(); // Stop the timer when the player wins
+
+        if (badFlips < 0) {
+            JOptionPane.showMessageDialog(frame, "You won finally but you suck! Also im not even going to list the time loser!", "Winner", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            String formattedTime = formatElapsedTime(elapsedTime);
+
+            JOptionPane.showMessageDialog(frame, "You won the game with " + badFlips + " unnecessary flips in " + formattedTime, "Winner", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        System.exit(0);
+    }
+
+    private static void startTimer() {
+        startTime = System.currentTimeMillis();
+        timer = new Timer(1000, e -> {});
+        timer.start();
+    }
+
+    private static void stopTimer() {
+        if (timer != null && timer.isRunning()) {
+            timer.stop();
+        }
+    }
+    private static String formatElapsedTime(long elapsedTime) {
+        long seconds = elapsedTime / 1000;
+        long minutes = seconds / 60;
+        seconds %= 60;
+
+        DecimalFormat decimalFormat = new DecimalFormat("00");
+        return decimalFormat.format(minutes) + ":" + decimalFormat.format(seconds);
+    }
+
 }
